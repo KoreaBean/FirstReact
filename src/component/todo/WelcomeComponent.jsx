@@ -9,7 +9,7 @@ export default function WelcomeComponent(){
   return(
     <div className="Welcome">
     WelcomeComponent {userName}
-      <div><Link to={"/todo"}>Go TO</Link></div>
+      <div><Link to={"/todos"}>Go TO</Link></div>
   </div>
   )
 

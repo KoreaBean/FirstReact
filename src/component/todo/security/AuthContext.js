@@ -1,19 +1,35 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 
-//create a Context
 
-export const AuthContext =  createContext();
-//Put some state in the context
-//Share the created context with other components
+export const AuthContext =  createContext()
+
+export const useAuth = () => useContext(AuthContext)
 
 export default function AuthProvider({children}){
 
-  const [number, setNumber] = useState(0)
+  const [isAuthenticated, setAuthenticated] = useState(false)
+
+
+  function Login(userName, userPassword){
+
+    if(userName==='kimsang' && userPassword === 'gyun'){
+      setAuthenticated(true)
+      return true
+
+    }else{
+      setAuthenticated(false)
+      return false
+    }
+  }
+
+  function Logout(){
+    setAuthenticated(false)
+  }
 
 
   return(
-    <AuthContext.Provider value={number}>
+    <AuthContext.Provider value={{ isAuthenticated,Login,Logout}}>
       {children}
     </AuthContext.Provider>
   )
