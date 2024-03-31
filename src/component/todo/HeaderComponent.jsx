@@ -19,7 +19,7 @@ export default function HeaderComponent(){
       <div className="container">
         <div className="row">
           <nav className="navbar navbar-expand-lg">
-            <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="https://www.naver.com">Logo</a>
+            <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="/welcome/gtt">Logo</a>
               <div className="collapse navbar-collapse">
                 <ul className="navbar-nav">
                   <li className="nav-item"><Link className="nav-link" to="/welcome/gyun">Home</Link></li>

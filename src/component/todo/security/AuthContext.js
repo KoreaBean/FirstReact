@@ -13,7 +13,7 @@ export default function AuthProvider({children}){
 
   function Login(userName, userPassword){
 
-    if(userName==='kimsang' && userPassword === 'gyun'){
+    if(userName==='kim' && userPassword === 'gyun'){
       setAuthenticated(true)
       return true
 
