@@ -10,7 +10,7 @@ export default function LoginComponent(){
   const auth = useAuth()
 
 
-  const [userName, setUserName] =  useState('kimsang11')
+  const [userName, setUserName] =  useState('kim')
 
   const [userPassword, setUserPassword] = useState('');
 

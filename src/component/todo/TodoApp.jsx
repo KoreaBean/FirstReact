@@ -8,6 +8,7 @@ import ErrorComponent from './ErrorComponent'
 import AuthProvider, { useAuth } from './security/AuthContext'
 import { BrowserRouter, Routes,Route,Navigate } from 'react-router-dom'
 import FooterComponent from './FooterComponent'
+import TodoComponent from './TodoComponent'
 
 
 function Authentication({children}){
@@ -31,6 +32,7 @@ export default function TodoApp(){
               <Route path='/login' element={<LoginComponent/>}/>
                 <Route path='/welcome/:userName' element={<Authentication><WelcomeComponent/></Authentication>}/>
                 <Route path='/todos' element={<Authentication><ListTodosComponent/></Authentication>}/>
+                <Route path='/todo/:id' element={<Authentication><TodoComponent/></Authentication>}/>
               <Route path='/Logout' element={<LogoutComponent/>}/>
 
               <Route path='*' element={<ErrorComponent/>}/>

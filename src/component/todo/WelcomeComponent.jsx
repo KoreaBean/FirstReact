@@ -1,12 +1,10 @@
 
-import { useParams, Link } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 import { useState } from 'react';
-import { Todos } from './api/hellowApi';
 
 export default function WelcomeComponent(){
 
-  const {userName} = useParams();
-  console.log(userName)
+ 
   const [message,setMessage] = useState(null)
 
 
@@ -18,10 +16,10 @@ export default function WelcomeComponent(){
     // .catch((error) => errorResponse(error))
     // .finally( ()=> console.log('finish'))
 
-    Todos(userName)
-    .then( (response) => success(response))
-    .catch((error) => errorResponse(error))
-    .finally( ()=> console.log('finish'))
+  //   Todos(userName)
+  //   .then( (response) => success(response))
+  //   .catch((error) => errorResponse(error))
+  //   .finally( ()=> console.log('finish'))
    }
   
   function success(response){
@@ -35,7 +33,7 @@ export default function WelcomeComponent(){
   return(
     <div>
       <div className="Welcome">
-          WelcomeComponent {userName}
+          WelcomeComponent 
           <div><Link to={"/todos"}>Go TO</Link></div>
       </div>
       <div>
@@ -44,20 +42,7 @@ export default function WelcomeComponent(){
       <div className='text-info'>
         {message}
       </div>
-        {
-          Todos.map(
-            todo =>(
-              <tr key={todo.id}>
-                <td>{todo.id}</td>
-                <td>{todo.userName}</td>
-                <td>{todo.description}</td>
-                <td>{todo.targetDate.toDateString()}</td>
-                <td>{todo.done.toString()}</td>
-
-              </tr>
-            )
-          )
-        }
+     
     </div>
   )
 
